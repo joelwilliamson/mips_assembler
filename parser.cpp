@@ -32,7 +32,10 @@ optional<std::string> extract_word(std::string& in)
 	}
 
 // All instructions must be put in this set in canonical (lower-case) form
-static const std::unordered_set<std::string> instructions{".word"};
+static const std::unordered_set<std::string> instructions{
+	"add","sub","mult","multu","div","divu",
+	"mfhi","mflo","lis","lw","sw","slt","sltu",
+	"beq","bne","jr","jalr",".word"};
 
 optional<std::deque<token>> parse(std::istream& is)
 	{
